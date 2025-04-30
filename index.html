@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Challenge 1: Boolean Search</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .container { max-width: 600px; margin: auto; }
+    .hint { color: gray; font-size: 0.9em; }
+    .success { color: green; }
+    .error { color: red; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Challenge 1: Solve a Boolean String</h1>
+    <p>Your task is to find a Project Controls Engineer with experience in Primavera P6 and cost control. Construct a Boolean search string to find the right candidates.</p>
+    <p class="hint">Hint: Use operators like AND, OR, and parentheses.</p>
+    <textarea id="booleanInput" rows="4" style="width: 100%;"></textarea>
+    <button onclick="validateBoolean()">Submit</button>
+    <p id="feedback"></p>
+    <a href="resume.html">Next Challenge</a>
+  </div>
+
+  <script>
+    function validateBoolean() {
+      const input = document.getElementById('booleanInput').value;
+      const correct = /(Primavera|P6).*(Cost Control|Project Controls).*Engineer/i;
+      const feedback = document.getElementById('feedback');
+
+      if (correct.test(input)) {
+        feedback.textContent = "Correct! You’ve solved the Boolean string.";
+        feedback.className = "success";
+      } else {
+        feedback.textContent = "Incorrect. Try again!";
+        feedback.className = "error";
+      }
+    }
+  </script>
+</body>
+</html>
