@@ -21,19 +21,29 @@
     <button onclick="validateBoolean()">Submit</button>
     <p id="feedback"></p>
     <a href="resume.html">Next Challenge</a>
+    <a href="answers.html">View All Answers</a>
   </div>
 
   <script>
     function validateBoolean() {
-      const input = document.getElementById('booleanInput').value;
-      const correct = /(Primavera|P6).*(Cost Control|Project Controls).*Engineer/i;
+      const input = document.getElementById('booleanInput').value.toLowerCase();
       const feedback = document.getElementById('feedback');
 
-      if (correct.test(input)) {
+      // Required terms
+      const requiredTerms = [
+        /(primavera|p6)/i, // Matches "Primavera" or "P6"
+        /("cost control"|"project controls")/i, // Matches "Cost Control" or "Project Controls"
+        /engineer/i // Matches "Engineer"
+      ];
+
+      // Check if all required terms are present
+      const isValid = requiredTerms.every((regex) => regex.test(input));
+
+      if (isValid) {
         feedback.textContent = "Correct! You’ve solved the Boolean string.";
         feedback.className = "success";
       } else {
-        feedback.textContent = "Incorrect. Try again!";
+        feedback.textContent = "Incorrect. Make sure to include all required terms.";
         feedback.className = "error";
       }
     }

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Challenge 3: LinkedIn Message Decoding</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .container { max-width: 600px; margin: auto; }
+    .hint { color: gray; font-size: 0.9em; }
+    .success { color: green; }
+    .error { color: red; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Challenge 3: Decode a LinkedIn Message</h1>
+    <p>You’ve received the following LinkedIn message:</p>
+    <blockquote>
+      "Hi, I’m interested in roles in project management or operations. Let me know if you have anything."
+    </blockquote>
+    <p>What is the best response?</p>
+    <select id="linkedinAnswer">
+      <option value="">Select an answer</option>
+      <option value="ask for resume">Ask for their resume and availability.</option>
+      <option value="ignore">Ignore the message.</option>
+      <option value="send job link">Send them a generic job link.</option>
+    </select>
+    <button onclick="validateLinkedIn()">Submit</button>
+    <p id="feedback"></p>
+    <a href="answers.html">View All Answers</a>
+  </div>
+
+  <script>
+    function validateLinkedIn() {
+      const answer = document.getElementById('linkedinAnswer').value;
+      const feedback = document.getElementById('feedback');
+
+      if (answer === "ask for resume") {
+        feedback.textContent = "Correct! Asking for their resume and availability is the best response.";
+        feedback.className = "success";
+      } else {
+        feedback.textContent = "Incorrect. Try again!";
+        feedback.className = "error";
+      }
+    }
+  </script>
+</body>
+</html>
