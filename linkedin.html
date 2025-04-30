@@ -17,14 +17,14 @@
     <h1>Challenge 3: Decode a LinkedIn Message</h1>
     <p>You’ve received the following LinkedIn message:</p>
     <blockquote>
-      "Hi, I’m interested in roles in project management or operations. Let me know if you have anything."
+      "Hi, I’m a certified Project Manager with experience in upstream oil and gas projects. I’m looking for opportunities in project controls or operations. Let me know if you have any roles that match my background."
     </blockquote>
     <p>What is the best response?</p>
     <select id="linkedinAnswer">
       <option value="">Select an answer</option>
       <option value="ask for resume">Ask for their resume and availability.</option>
-      <option value="ignore">Ignore the message.</option>
       <option value="send job link">Send them a generic job link.</option>
+      <option value="schedule call">Schedule a call to discuss their experience and potential roles.</option>
     </select>
     <button onclick="validateLinkedIn()">Submit</button>
     <p id="feedback"></p>
@@ -36,11 +36,11 @@
       const answer = document.getElementById('linkedinAnswer').value;
       const feedback = document.getElementById('feedback');
 
-      if (answer === "ask for resume") {
-        feedback.textContent = "Correct! Asking for their resume and availability is the best response.";
+      if (answer === "schedule call") {
+        feedback.textContent = "Correct! Scheduling a call is the best way to understand their experience and match them to a role.";
         feedback.className = "success";
       } else {
-        feedback.textContent = "Incorrect. Try again!";
+        feedback.textContent = "Incorrect. Think about how to engage the candidate effectively.";
         feedback.className = "error";
       }
     }

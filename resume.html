@@ -15,14 +15,21 @@
 <body>
   <div class="container">
     <h1>Challenge 2: Interpret a Tricky Resume</h1>
-    <p>You’ve received a resume with vague descriptions. Can you identify the candidate’s qualifications?</p>
-    <p><strong>Resume:</strong> "Led operational improvements in upstream projects, resulting in increased efficiency."</p>
-    <p>What is the candidate’s area of expertise?</p>
+    <p>You’ve received the following resume:</p>
+    <blockquote>
+      <p><strong>Experience:</strong></p>
+      <ul>
+        <li>Led operational improvements in upstream projects, resulting in a 15% efficiency increase.</li>
+        <li>Managed cost control for a $10M downstream project using Primavera P6.</li>
+        <li>Collaborated with cross-functional teams to implement HSE standards in mining operations.</li>
+      </ul>
+    </blockquote>
+    <p>Which of the following roles is the best fit for this candidate?</p>
     <select id="resumeAnswer">
       <option value="">Select an answer</option>
-      <option value="upstream operations">Upstream Operations</option>
-      <option value="downstream operations">Downstream Operations</option>
-      <option value="finance">Finance</option>
+      <option value="project controls engineer">Project Controls Engineer</option>
+      <option value="hse specialist">HSE Specialist</option>
+      <option value="operations manager">Operations Manager</option>
     </select>
     <button onclick="validateResume()">Submit</button>
     <p id="feedback"></p>
@@ -34,11 +41,11 @@
       const answer = document.getElementById('resumeAnswer').value;
       const feedback = document.getElementById('feedback');
 
-      if (answer === "upstream operations") {
-        feedback.textContent = "Correct! The candidate specializes in upstream operations.";
+      if (answer === "project controls engineer") {
+        feedback.textContent = "Correct! The candidate’s experience in cost control and Primavera P6 aligns with a Project Controls Engineer role.";
         feedback.className = "success";
       } else {
-        feedback.textContent = "Incorrect. Try again!";
+        feedback.textContent = "Incorrect. Review the resume and try again.";
         feedback.className = "error";
       }
     }
