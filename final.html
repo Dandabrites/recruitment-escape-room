@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Final Challenge: Escape Code</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .container { max-width: 600px; margin: auto; }
+    .success { color: green; }
+    .error { color: red; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Final Challenge: Escape Code</h1>
+    <p>Combine the clues from the previous challenges to unlock the escape code:</p>
+    <ul>
+      <li>Challenge 1: Boolean search focused on <strong>Primavera</strong>.</li>
+      <li>Challenge 2: Best role fit was <strong>Project Controls Engineer</strong>.</li>
+      <li>Challenge 3: Best response was to <strong>Schedule a Call</strong>.</li>
+    </ul>
+    <p>Enter the escape code:</p>
+    <input type="text" id="escapeCode" placeholder="Enter code here">
+    <button onclick="validateCode()">Submit</button>
+    <p id="feedback"></p>
+  </div>
+
+  <script>
+    function validateCode() {
+      const code = document.getElementById('escapeCode').value.toLowerCase();
+      const feedback = document.getElementById('feedback');
+
+      if (code === "primavera-controls-call") {
+        feedback.textContent = "Correct! You’ve escaped the recruitment room!";
+        feedback.className = "success";
+      } else {
+        feedback.textContent = "Incorrect. Review the clues and try again.";
+        feedback.className = "error";
+      }
+    }
+  </script>
+</body>
+</html>

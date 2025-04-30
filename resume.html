@@ -10,26 +10,29 @@
     .hint { color: gray; font-size: 0.9em; }
     .success { color: green; }
     .error { color: red; }
+    img { max-width: 100%; height: auto; margin: 10px 0; }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Challenge 2: Interpret a Tricky Resume</h1>
-    <p>You’ve received the following resume:</p>
+    <p>You’ve received the following resume and project image:</p>
     <blockquote>
       <p><strong>Experience:</strong></p>
       <ul>
         <li>Led operational improvements in upstream projects, resulting in a 15% efficiency increase.</li>
         <li>Managed cost control for a $10M downstream project using Primavera P6.</li>
-        <li>Collaborated with cross-functional teams to implement HSE standards in mining operations.</li>
+        <li>Implemented HSE standards in mining operations, reducing incidents by 20%.</li>
       </ul>
     </blockquote>
+    <img src="https://via.placeholder.com/600x300?text=Project+Site+Image" alt="Project Site Image">
     <p>Which of the following roles is the best fit for this candidate?</p>
     <select id="resumeAnswer">
       <option value="">Select an answer</option>
       <option value="project controls engineer">Project Controls Engineer</option>
       <option value="hse specialist">HSE Specialist</option>
       <option value="operations manager">Operations Manager</option>
+      <option value="site supervisor">Site Supervisor</option>
     </select>
     <button onclick="validateResume()">Submit</button>
     <p id="feedback"></p>
@@ -45,7 +48,7 @@
         feedback.textContent = "Correct! The candidate’s experience in cost control and Primavera P6 aligns with a Project Controls Engineer role.";
         feedback.className = "success";
       } else {
-        feedback.textContent = "Incorrect. Review the resume and try again.";
+        feedback.textContent = "Incorrect. Review the resume and image carefully.";
         feedback.className = "error";
       }
     }

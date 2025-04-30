@@ -10,12 +10,14 @@
     .hint { color: gray; font-size: 0.9em; }
     .success { color: green; }
     .error { color: red; }
+    img { max-width: 100px; height: auto; border-radius: 50%; margin: 10px 0; }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Challenge 3: Decode a LinkedIn Message</h1>
-    <p>You’ve received the following LinkedIn message:</p>
+    <p>You’ve received the following LinkedIn message and profile picture:</p>
+    <img src="https://via.placeholder.com/100?text=Profile" alt="Profile Picture">
     <blockquote>
       "Hi, I’m a certified Project Manager with experience in upstream oil and gas projects. I’m looking for opportunities in project controls or operations. Let me know if you have any roles that match my background."
     </blockquote>
@@ -25,10 +27,11 @@
       <option value="ask for resume">Ask for their resume and availability.</option>
       <option value="send job link">Send them a generic job link.</option>
       <option value="schedule call">Schedule a call to discuss their experience and potential roles.</option>
+      <option value="ignore">Ignore the message.</option>
     </select>
     <button onclick="validateLinkedIn()">Submit</button>
     <p id="feedback"></p>
-    <a href="answers.html">View All Answers</a>
+    <a href="final.html">Final Challenge</a>
   </div>
 
   <script>
